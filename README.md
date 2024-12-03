@@ -7,28 +7,31 @@
 
 Шаг 3. Создайте сервисный класс со следующим исходным кодом:
 
+```
 public class BonusService {
 
 public long calculate(long amount, boolean registered) {
 
-int percent = registered ? 3 : 1;
+    int percent = registered ? 3 : 1;
 
-long bonus = amount * percent / 100;
+    long bonus = amount * percent / 100;
 
-long limit = 500;
+    long limit = 500;
 
-if (bonus > limit) {
+    if (bonus > limit) {
 
-bonus = limit;
+    bonus = limit;
 
-} return bonus;
+    } return bonus;
+
+  }
 
 }
-
-}
+```
 
 Шаг 4. Создайте тестовый класс со следующим исходным кодом:
 
+```
 import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.Assertions;
@@ -67,9 +70,10 @@ BonusService service = new BonusService();
 
     // производим проверку (сравниваем ожидаемый и фактический):
     Assertions.assertEquals(expected, actual);
-}
+  }
 
 }
+```
 
 Шаг 5. Запустите тесты через mvn clean test, убедитесь, что они запускаются и проходят.
 
